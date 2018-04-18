@@ -1,4 +1,4 @@
-package com.pluralsight.calengine;
+package com.pluralsight.calcengine;
 
 public abstract class CalculateBase {
 	private double leftVal;

@@ -2,3 +2,4 @@ Servers/
 .recommenders/
 RemoteSystemsTempFiles/
 .metadata/
+**.class*

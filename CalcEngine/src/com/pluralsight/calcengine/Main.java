@@ -1,9 +1,25 @@
-package com.pluralsight.calengine;
+package com.pluralsight.calcengine;
 
 public class Main {
 
 	public static void main(String[] args) {
-
+		// useMathEquation();
+		// useCalculatorBase();
+		String[] statements = {
+				"divide 100.0 50.0",
+				"add 25.0 92.0",
+				"subtract 225.0 17.0",
+				"multiply 11.0 3.0"
+		};
+		
+		CalculateHelper helper = new CalculateHelper();
+		for(String statement: statements) {
+			helper.process(statement);
+			System.out.println(helper);
+		}
+	}
+	
+	static void useMathEquation() {
 		/*
 		 * double[] leftVals = {100.0d, 25.0d, 225.0d, 11.0d}; double[] rightVals =
 		 * {50.0d, 92.0d, 17.0d, 3.0d}; char[] opCodes = {'d', 'a', 's', 'm'}; double[]
@@ -51,6 +67,9 @@ public class Main {
 		System.out.println("Using inheritance");
 		System.out.println();
 		
+	}
+	
+	static void useCalculatorBase() {
 		CalculateBase[] calculators = {
 				new Divider(100.0d, 50.0d),
 				new Adder(25.0d, 92.0d),
