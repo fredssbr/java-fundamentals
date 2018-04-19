@@ -11,13 +11,24 @@ public class CalculateHelper {
 	double rightValue;
 	double result;
 	
-	public void process(String statement) {
+	public void process(String statement) throws InvalidStatementException{
 		String[] parts = statement.split(" ");
+		
+		if(parts.length != 3)
+			throw new InvalidStatementException("Incorrect number of fields", statement);
+		
 		String commandString = parts[0];
-		leftValue = Double.parseDouble(parts[1]);
-		rightValue = Double.parseDouble(parts[2]);
+		
+		try {
+			leftValue = Double.parseDouble(parts[1]);
+			rightValue = Double.parseDouble(parts[2]);
+		} catch (NumberFormatException e) {
+			throw new InvalidStatementException("Non-numeric data", statement, e);
+		}
 		
 		setFromCommandString(commandString);
+		if(command == null)
+			throw new InvalidStatementException("Invalid command", statement);
 		
 		CalculateBase calculator = null;
 		switch(command) {
