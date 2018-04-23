@@ -1,6 +1,8 @@
 package com.pluralsight.calcengine;
-
-public enum MathCommand {
+/*
+ * no accessor means it can only be used inside the package
+ */
+enum MathCommand {
 	Add,
 	Subtract,
 	Multiply,
